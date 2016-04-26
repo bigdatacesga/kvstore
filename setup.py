@@ -13,6 +13,8 @@ setup(
     long_description=open('README.rst').read(),
     py_modules=['kvstore'],
     install_requires=['requests'],
+    test_suite='tests',
+    tests_require=['coverage'],
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
