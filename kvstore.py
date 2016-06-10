@@ -49,7 +49,13 @@ class Client(object):
             raise KeyDoesNotExist("Key " + k + " does not exist")
         if r.status_code != 200:
             raise KVStoreError('GET returned {}'.format(r.status_code))
-        return base64.b64decode(r.json()[0]['Value'])
+
+        try:
+            return base64.b64decode(r.json()[0]['Value'])
+        except TypeError as e:
+            # Value was empty and wild None appeared
+            return ""
+
 
     def recurse(self, k, wait=False, wait_index=None, timeout='5m'):
         """Recursively get the tree below the given key"""

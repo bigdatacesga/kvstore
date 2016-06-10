@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='kvstore',
-    version='0.1.0',
+    version='0.1.1',
     author='Javier Cacheiro',
     author_email='javier.cacheiro@gmail.com',
     url='https://github.com/javicacheiro/kvstore',
